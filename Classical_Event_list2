@@ -1,0 +1,52 @@
+SAP ABAP uses events to trigger the specific codes in a pre-define sequence. The ABAP events are:
+
+You can define following thing in domain-
+
+    In Definition Tab
+       1.   INITIALIZATION
+       2.   AT SELECTION-SCREEN
+       3.   START-OF-SELECTION
+       4.   TOP-OF-PAGE
+       5.   TOP-OF-PAGE DURING LINE SELECTION
+       6.   END-OF-PAGE
+       7.   END-OF-SELECTION
+       8.   GET
+       9.   GET LATE
+
+
+There are different events for list processing interactive reports. They are:
+       1.   AT LINE-SELECTION.
+       2.    AT USER-COMMAND.
+       3.   AT PFn.
+
+
+The INITIALIZATION event is processed only in the case of SUBMIT, not CALL SELECTION-SCREEN. The END-OF-PAGE event is executed whenever processing reaches that area when formatting a list page or if the RESERVE statement detects that there is insufficient space remaining on the current page. The END-OF-SELECTION event is triggered in type 1 programs once the logical database has finished reading all data and before the list processor is started.
+
+Note: Since INITIALIZATION is only executed once when you start the report, it is not suitable for screen modifications such as suppressing individual parameters.
+
+What are the AT SELECTION-SCREEN events?
+The event AT SELECTION-SCREEN get trigger while the selection screen is being processed. Following are the AT SELECTION-SCREEN events-
+       1.   AT SELECTION-SCREEN OUTPUT
+       2.   AT SELECTION-SCREEN ON 'field'
+       3.   AT SELECTION-SCREEN ON END OF sel
+       4.   AT SELECTION-SCREEN ON VALUE-REQUEST FOR psel_low_high
+       5.   AT SELECTION-SCREEN ON HELP-REQUEST FOR psel_low_high
+       6.   AT SELECTION-SCREEN ON RADIOBUTTON GROUP radi
+       7.   AT SELECTION-SCREEN ON BLOCK block
+       8.   AT SELECTION-SCREEN
+       9.   AT SELECTION-SCREEN...ON EXIT-COMMAND
+
+What are the SELECTION-SCREEN variants available?
+Following are the SELECTION-SCREEN variants available -
+       1.   SELECTION-SCREEN BEGIN OF BLOCK block
+       2.   SELECTION-SCREEN BEGIN OF TABBED BLOCK block FOR n LINES.
+       3.   SELECTION-SCREEN END OF BLOCK block.
+       4.   SELECTION-SCREEN TAB (len) tabname USER-COMMAND ucomm.
+       5.   SELECTION-SCREEN BEGIN OF LINE.
+       6.   SELECTION-SCREEN END OF LINE.
+       7.   SELECTION-SCREEN POSITION pos.
+       8.   SELECTION-SCREEN ULINE.
+       9.   SELECTION-SCREEN COMMENT fmt name.
+       10. SELECTION-SCREEN PUSHBUTTON fmt name USER-COMMAND ucom.
+       11. SELECTION-SCREEN SKIP n.
+       12. SELECTION-SCREEN FUNCTION KEY n.
